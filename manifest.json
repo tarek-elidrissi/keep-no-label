@@ -1,0 +1,26 @@
+{
+  "name": "Google Keep - noLabel",
+  "version": "1.1",
+  "manifest_version": 3,
+  "description": "Toggle visibility of labeled notes in Google Keep with a single click.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://keep.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Toggle labeled notes"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://keep.google.com/*"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon128x128.png"
+  }
+}
